@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body1 {
+    background-image: url('../img/background.jpg');
+    object-fit: cover;
+    opacity: 80%;
+    background-repeat: no-repeat;
+}
+
+.body2 {
+    background-image: url('../img/layered-waves-haikei.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position-y: center ;
+}
+
+.body3 {
+    background-image: url('../img/blob-scene-haikei.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position-y: center ;
+}
+
+.body4 {
+    background-image: url('../img/circle-scatter-haikei.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+   
+}
+
+
+.imgstudent{
+    border-radius: 50%;
+    border: 2px solid #333;
+    width: 150px;
+    height: 150px;
+}
+
+.button1:hover{
+    background-color: #f2f4;
+}
+
+
+.button2:hover{
+    background-color: #c90;
+}
+
+.profileImage{
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+}

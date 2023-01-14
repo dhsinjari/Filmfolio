@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+    <title>Filmfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body class="body3">
+    <nav class="d-flex justify-content-evenly my-auto bg-secondary p-2">
+        <a class="button1 text-white btn " href="/dashboard"><i class="fa-solid fa-user">Home</i> </a>
+        <a class="button1 text-white btn " href="/browse"><i class="fa-solid fa-user">Movies</i> </a>
+        <a class="button1 text-white btn " href="/profile"><i class="fa-solid fa-user"> My Profile</i> </a>
+        <a class="button1 text-white btn " href="/myFavorites"><i class="fa-solid fa-user"> My Favorite Movies</i></a>
+        <a class=" button1 text-white btn " href="/logout"><i class="fa-solid fa-user">LogOut</i></a>
+    </nav>
+    <div class="container w-75 mt-5 ">
+        <h2 class="text-center text-light  my-3"> <strong> Add A Movie</strong></h2>
+    <form class=" m-auto p-5" action="/createmovie" method="post" enctype="multipart/form-data">
+        <div class="row">
+        <input type="hidden" name="users_id" value="{{loggedUser.id}}">
+    
+        <div class="form-group my-1">
+            <label for="title" class=" fs-4" > Movie Title:</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="form-group my-1">
+            <label for="director" class=" fs-4" > Movie Director:</label>
+            <input type="text" class="form-control" name="director">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="form-group my-1">
+            <label for="cast" class=" fs-4" > Movie Cast:</label>
+            <input type="text" class="form-control" name="cast">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        
+        <div class="form-group my-1">
+            <label for="length" class=" fs-4"> Movie length:</label>
+            <input type="text" class="form-control" name="length">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="form-group my-1">
+            <label for="genre1" class=" fs-4"> Movie Genre:</label>
+            <input type="text" class="form-control" name="genre1">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="form-group my-1 ">
+            <label for="genre2" class=" fs-4"> Movie Subgenre: </label>
+            <input type="text" class="form-control" name="genre2">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="form-group my-1">
+            <label for="releasedate " class=" fs-4"> Release Date:</label>
+            <input type="date" class="form-control" name="releasedate">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="form-group my-1">
+            <label for="description" class=" fs-4"> Description:</label>
+            <input type="text" class="form-control" name="description">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["empty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <div class="form-group my-1">
+            <label for="image" class=" fs-4"> Movie Thumbnail:</label>
+            <input type="file" class="form-control" name="image">
+        </div>
+        <div>
+            {% with messages = get_flashed_messages(category_filter=["image"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        
+        
+        <input class="btn  mx-1 button2 text-dark border-light mt-3" type="submit" value="Add Movie">
+    </form>
+</div>
+</body>
+</html>
